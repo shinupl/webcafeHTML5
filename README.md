@@ -12,3 +12,8 @@
 
 ## CLI 명령
 - cd webcafeHTML5
+
+
+## 입력방법
+- div.group.group$*3
+- div.group.group$*3{group}
