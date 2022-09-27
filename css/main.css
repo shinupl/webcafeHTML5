@@ -27,16 +27,35 @@ body *, body *::before, body *::after {
 }
 
 /* 메인 콘텐츠 */
-.main {
+/* flex를 이용한 메인콘텐츠 배치 */
+/* .main {
   background-color: blue;
   height: 60vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  padding: 30px;
+} */
+
+/* float을 활용한 메인콘텐츠 배치 */
+.main {
+  background-color: blue;
+  display: flow-root;
+  min-height: 450px;
+  padding: 30px 15px;
+}
+
+.clearfix::after {
+  content: "";
+  background-color: red;
+  clear: both;
+  display: block;
+  /* 클리어픽스의 마지막 요소를 블럭으로 만들어주기 */
 }
 
 .group {
-
+  margin: 0 15px;
+  float: left;
 }
 
 .group1 {
@@ -51,6 +70,10 @@ body *, body *::before, body *::after {
   background-color: salmon;
   width: 190px;
 }
+
+/* .clearfix {
+  clear: both;
+} */
 
 /* 슬로건 */
 .slogan {
