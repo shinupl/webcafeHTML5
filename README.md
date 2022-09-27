@@ -44,3 +44,11 @@ git log --oneline
 ## html tag 입력방법
 - div.group.group$*3
 - div.group.group$*3{group}
+
+## 레이아웃 구성
+- 세로값은 auto 또는 min-height
+- margin과 padding(내부 포함)은 적절하게 사용
+- order : 순서를 설정할 수 있다. 모든 아이템은 0이 기본 -1이 되면 가장 앞으로 나오게 됨
+
+- body *, body *::before, body *::after ---> 반응형 시 (타켓 명확하게)
+- *, *::before, *::after ---> 고정 형
