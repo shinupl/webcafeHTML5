@@ -46,6 +46,19 @@ git log --oneline
 - div.group.group$*3{group}
 
 ## 레이아웃 구성
+- 레이아웃을 위해 마크업을 변경하는건 안좋음
+- display : flex
+  - flex-direction 속성으로 row 또는 column 방향을 지정할 수 있음  
+    (flex-direction 메인축과 교차축이 결정)
+  - flex 컨테이너와 flex 아이템이 가질 수 있는 속성이 다름  
+
+- float 속성
+  - linebox 안에서 왼쪽 또는 오른쪽 배치
+  - normal flow를 벗어나 화면에 떠있는 형태  --->  부모가 높이를 잃게됨
+  - float 요소의 부모에게 display: flow-root(상위 개채)를 지정해 float 개체의 높이를 부모가 읽어들일 수 있도록 할 수 있음  
+  - overflow: hidden, clear: both는 flow-root를 대신해 float 이슈를 해결 할 수 있지만  
+    영역이 넘어가면 잘려 보이기 때문에 수정에 용이하지 않음
+
 - 세로값은 auto 또는 min-height
 - margin과 padding(내부 포함)은 적절하게 사용  
   (margin도 박스 값에 투명하게 보일 뿐, 박스에 포함되기 때문)
@@ -54,8 +67,10 @@ git log --oneline
 - body *, body *::before, body *::after ---> 반응형 시 (타켓 명확하게)
 - *, *::before, *::after ---> 고정 형 (전체에 해당되기 때문에 속도에 문제를 줄 수있다.)
 
-- 레이아웃을 위해 마크업을 바꾸는건 지양!!!!
-- display : flow-root <-- overflow : hidden은 영역이 넘어가면 잘려 보이기 때문에 코드 수정에 유용하지 않다.  
-  상황에 맞게 사용해야된다.
+- ul.member-service>li*>sapn[aria-hidden="true"]{:}+a[href='/']
 
-- ul.member-service>li*>sapn[aria-hidden="true"]{:}a[href='/']
+aria-hidden="true" : 보이스로 읽을 때 읽지 않는다
+
+position absolute ---> 유연하지 못하다. 변경되면 좌표를 변경해야한다.
+
+flex는 margin 사용이 아니고 gap
