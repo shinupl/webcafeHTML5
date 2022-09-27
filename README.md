@@ -47,8 +47,15 @@ git log --oneline
 
 ## 레이아웃 구성
 - 세로값은 auto 또는 min-height
-- margin과 padding(내부 포함)은 적절하게 사용
+- margin과 padding(내부 포함)은 적절하게 사용  
+  (margin도 박스 값에 투명하게 보일 뿐, 박스에 포함되기 때문)
 - order : 순서를 설정할 수 있다. 모든 아이템은 0이 기본 -1이 되면 가장 앞으로 나오게 됨
 
 - body *, body *::before, body *::after ---> 반응형 시 (타켓 명확하게)
-- *, *::before, *::after ---> 고정 형
+- *, *::before, *::after ---> 고정 형 (전체에 해당되기 때문에 속도에 문제를 줄 수있다.)
+
+- 레이아웃을 위해 마크업을 바꾸는건 지양!!!!
+- display : flow-root <-- overflow : hidden은 영역이 넘어가면 잘려 보이기 때문에 코드 수정에 유용하지 않다.  
+  상황에 맞게 사용해야된다.
+
+- ul.member-service>li*>sapn[aria-hidden="true"]{:}a[href='/']
