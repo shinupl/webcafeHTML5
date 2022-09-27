@@ -3,6 +3,17 @@ html, body {
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
+body {
+  color: #000;
+  background-color: #ccc;
+}
+
+/* 링크 스타일 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* 박스 사이징 재정의 */
 body *, body *::before, body *::after {
   box-sizing: border-box;
@@ -16,8 +27,49 @@ body *, body *::before, body *::after {
 
 /* 헤더 */
 .header {
-  background-color: yellow;
-  height: 10vh;
+  background-color: #fff;
+  position: relative;
+  padding: 0 30px;
+}
+
+/* 로고 */
+.logo {
+  margin: 0;
+  font-size: 1;
+  position: absolute;
+  top: 45px;
+  left: 60px;
+}
+
+.logo a {
+  display: block;
+}
+
+.logo img {
+  vertical-align: top;
+}
+
+/* 멤버 서비스링크 */
+.member-service {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* font-size: 0; */ /* -----> li 사이 공백을 지우는 역할을 해줌 */
+  text-align: right;
+  /* margin-right: -10px; ----> 음수로도 이동이 가능하다 오른쪽으로 당김(성능 이슈있음)*/
+  transform: translateX(10px); /* ---> 마지막 마진 라이트 0을 해도 되지만 앵커가 안됨 */
+}
+
+.member-service li {
+  display: inline-block;
+  /* font-size: 1rem; */
+  padding: 4px 0; /* ----> 패딩을 a만 주는게 아니라 나눠서 주면 아웃라인 잘림 현상 없이 진행 */
+  text-transform: uppercase;
+}
+
+.member-service a {
+  display: inline-block;
+  padding: 6px 10px;
 }
 
 /* 비주얼 */
@@ -85,10 +137,4 @@ body *, body *::before, body *::after {
 .footer {
   background-color: purple;
   height: 10vh;
-}
-
-
-
-.logo {
-  margin: 0;
 }
