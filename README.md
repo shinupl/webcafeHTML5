@@ -47,6 +47,7 @@ git log --oneline
 
 ## 레이아웃 구성
 - 레이아웃을 위해 마크업을 변경하는건 안좋음
+- 마크업은 콘텐츠 기준, 뷰 기준이 아님
 - display : flex
   - flex-direction 속성으로 row 또는 column 방향을 지정할 수 있음  
     (flex-direction 메인축과 교차축이 결정)
@@ -74,3 +75,18 @@ aria-hidden="true" : 보이스로 읽을 때 읽지 않는다
 position absolute ---> 유연하지 못하다. 변경되면 좌표를 변경해야한다.
 
 flex는 margin 사용이 아니고 gap
+
+display: none;은 사라질 수있지만 콘텐츠가 없는 상태
+
+메뉴 배치 시 li를 inline-block을 사용하면 공백이 나오게되 레이아웃 설정 시 부적절
+
+배치나 크기에 영향을 주는 부분들은 상속 X
+꾸미는 요소들은 상속 O
+
+가상요소는 가상 박스가 생성 -> 딱 콘텐츠의 영역만
+
+@ : 선언할때 사용
+
+css 파일을 나눠서 하면 좋지만 성능이 떨어짐, 배포할때는 하나로 합쳐서 해야됨
+
+focus-visible ---> 키보드 상태에서만

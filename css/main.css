@@ -1,11 +1,30 @@
+@import url(./fonts.css);
+@import url(./fontello.css);
+
 /* 기본 글꼴 - 웹폰트 */
 html, body {
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
+  font-size: 1.4rem;
   color: #000;
   background-color: #ccc;
+}
+
+/* 숨김 콘텐츠 */
+.a11y-hidden {
+  position: absolute; /* top -9999px로 진행 시 리더기가 상단으로 튀는 현상 발생(있는 위치를 찾기 위해) */
+  width: 1px;
+  height: 1px; /* 기본적인 크기가 있어야 리더기가 읽을 수 있기 때문에 0으로 진행 시 못 읽음 */
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: polygon(0 0, 0 0, 0 0); /* 구형에 안돌아감(구형은 clip)xy좌표를 모두 0으로 만들어 안보이게끔 */
 }
 
 /* 링크 스타일 */
@@ -68,7 +87,6 @@ body *, body *::before, body *::after {
   background-color: #fff;
   position: relative;
   padding: 0 30px;
-  height: 120px;
   border-radius: 0 0 20px 20px;
 }
 
@@ -77,7 +95,7 @@ body *, body *::before, body *::after {
   margin: 0;
   font-size: 1;
   position: absolute;
-  top: 45px;
+  top: 43px;
   left: 60px;
 }
 
@@ -112,9 +130,104 @@ body *, body *::before, body *::after {
   padding: 6px 10px;
 }
 
+/* 메인 메뉴 */
+.navigation {
+  padding-bottom: 35px;
+}
+
+.menu {
+  border-top: 2px solid #000;
+  height: 47px;
+  background: #c15726 /* 대표속성/색상 나오고 그라디언트 적용 */ linear-gradient(to bottom, #F7972A 0%,#FC6914 32%,#FC6914 70%,#F7972A 100%);
+  margin: 0;
+  padding-left: 230px;
+  list-style: none;
+  border-radius: 0 0 5px 5px;
+}
+
+.menu-item {
+  float: left;
+  border-left: 2px solid #fff;
+  position: relative;
+}
+
+.menu-html, .menu-css, .menu-standards {
+  left: 0;
+}
+
+.menu-accessibility, .menu-qna, .menu-archive {
+  right: 0;
+}
+
+.is-active .menu-button {
+  color: #ff0;
+}
+
+.is-active .menu-button::after {
+  content: "";
+  display: block;
+  background: #000;
+  height: 2px;
+}
+
+.menu-button {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  padding: 0 23px;
+  line-height: 45px;
+  font-weight: 700;
+  color: #fff;
+  font-size: 15px;
+  text-shadow: 1px 1px 1px #000, -1px -1px 1px #000;
+}
+
+.is-active .sub-menu {
+  display: block;
+}
+
+.sub-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute; /* 서브 메뉴가 크기를 같지 않게 하기 위해 띄여줌 */
+  top: 47px;
+  display: none;
+  white-space: nowrap; /* 영역에 맞춰 줄바꿈이 이뤄지지 않도록 */
+}
+
+.sub-menu li {
+  display: inline-block;
+}
+
+.sub-menu a {
+  display: inline-block;
+  padding: 6px 10px;
+}
+
+.sub-menu a::before {
+  content: "\f192";
+  font-family: "fontello";
+  display: inline-block;
+  width: 1em;
+  margin-right: .2em;
+}
+
+.sub-menu a:focus {
+  outline: none;
+}
+
+.sub-menu a:hover, .sub-menu a:focus:hover {
+  color: #f00;
+}
+
+.sub-menu a:hover::before, .sub-menu a:focus::before /* 키보드 운영시에도 변경되도록 포커스 추가 */ {
+  content: "\e800";
+}
+
+
 /* 비주얼 */
 .visual {
-  background-color: orange;
   height: 10vh;
 }
 
@@ -131,7 +244,6 @@ body *, body *::before, body *::after {
 
 /* float을 활용한 메인콘텐츠 배치 */
 .main {
-  background-color: blue;
   display: flow-root;
   min-height: 450px;
   padding: 30px 15px;
@@ -139,7 +251,6 @@ body *, body *::before, body *::after {
 
 .clearfix::after {
   content: "";
-  background-color: red;
   clear: both;
   display: block;
   /* 클리어픽스의 마지막 요소를 블럭으로 만들어주기 */
@@ -151,15 +262,12 @@ body *, body *::before, body *::after {
 }
 
 .group1 {
-  background-color: pink;
   width: 250px;
 }
 .group2 {
-  background-color: lime;
   width: 380px;
 }
 .group3 {
-  background-color: salmon;
   width: 190px;
 }
 
@@ -169,12 +277,10 @@ body *, body *::before, body *::after {
 
 /* 슬로건 */
 .slogan {
-  background-color: aqua;
   height: 10vh;
 }
 
 /* 푸터 */
 .footer {
-  background-color: purple;
   height: 10vh;
 }
