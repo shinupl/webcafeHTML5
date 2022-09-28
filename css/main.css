@@ -13,7 +13,10 @@ html {
 body {
   font-size: 1.4rem;
   color: #000;
-  background-color: #ccc;
+  /* background-color: #ccc; */
+  background: url(./images/bg_flower.png) no-repeat 50% /* <-x좌표 */ 0 /* <-Y좌표 */,
+  linear-gradient(to bottom, #ccc 0%, #eee 30%, #fff 60%, #fff 100%);
+  background-color: #ccc; /* 대표속성에 넣어도 되지만 멀티 배경 사용 시 따로 선언해주는게 좋다 */
 }
 
 /* 숨김 콘텐츠 */
@@ -227,8 +230,65 @@ body *, body *::before, body *::after {
 
 
 /* 비주얼 */
+@keyframes moveEffect {
+  0% {
+    font-size: 12px;
+    color: rgb(0, 0, 0, 0);
+    /* padding: 0; 패딩, 마진(박스를 함께 포함하게됨)으로 가능하지만 리플로우 유발 position도 동일 */
+    transform: translate(0,0); /* 있던 자리에서 이동하다보니 스크롤이 생겼기 때문에 생각해야됨 -> 독립적 이동이 필요 */
+  }
+  100% {
+    font-size: 24px;
+    color: rgb(0, 0, 0, 1);
+    /* padding: 75px 0 0 400px; */
+    transform: translate(400px,75px);
+  }
+}
+
+@keyframes fadeEffect {
+  0% {
+    opacity: 1%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
 .visual {
-  height: 10vh;
+  height: 120px;
+  position: relative;
+}
+
+.visual::before, .visual::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: fadeEffect 2000ms infinite alternate;
+}
+
+.visual::before {
+  background: url(./images/ani_flower_01.png) no-repeat 0 -10px, 
+  url(./images/ani_flower_02.png) no-repeat 600px 0;
+}
+
+.visual::after {
+  background: url(./images/ani_flower_03.png) no-repeat 300px 0, 
+  url(./images/ani_flower_04.png) no-repeat 800px 10px;
+  animation-delay: 1000ms;
+}
+   
+   /* 애니매이션을 어디에 먹게 할지 선언 */
+.visual-text {
+  position: relative;
+  z-index: 10;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  animation-name: moveEffect;
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
+  display: inline-block; /* 독립적 이동이 필요하기 때문에 추가됨 */
 }
 
 /* 메인 콘텐츠 */
@@ -247,6 +307,8 @@ body *, body *::before, body *::after {
   display: flow-root;
   min-height: 450px;
   padding: 30px 15px;
+  background-color: #fff;
+  border-radius: 15px 15px 0 0;
 }
 
 .clearfix::after {
