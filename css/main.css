@@ -19,17 +19,57 @@ body *, body *::before, body *::after {
   box-sizing: border-box;
 }
 
+/* 건너뛰기 링크(키보드 사용시) */
+.skip-nav {
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.skip-nav a {
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+  top: -1000px; /* 앱솔루트로 띄여버리고 밖으로 보냄 */
+}
+
+.skip-nav a:focus {
+  outline-offset: -4px; /* 앵커 박스가 정상적으로 보임 */
+  position: static;
+}
+
 /* 레이아웃 */
 .header, .visual, .main, .slogan, .footer-inner {
   width: 940px;
   margin: 0 auto;
 }
 
+/* 내려가지 않고 덮이는 코드(성능에 용이)
+.skip-nav {
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.skip-nav a {
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+} */
+
 /* 헤더 */
 .header {
   background-color: #fff;
   position: relative;
   padding: 0 30px;
+  height: 120px;
+  border-radius: 0 0 20px 20px;
 }
 
 /* 로고 */
