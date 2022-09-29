@@ -567,6 +567,301 @@ body *, body *::before, body *::after {
   margin-left: 8px;
 }
 
+/* 공지사항 및 자료실 */
+.board{
+  margin-top: 20px;
+  position: relative;
+  padding-top: 45px;
+}
+
+.board-list, .board-more{
+  display: none;
+}
+
+.is-select .board-list, .is-select .board-more{
+  display: block;
+}
+
+.board-tab{
+  position: absolute;
+  top: 0;
+  border: 1px solid #aaa;
+  padding: 6px 8px;
+  border-radius: 5px 5px 0 0;
+  background: #ccc linear-gradient(#ccc, #eee);
+  color: #666;
+  cursor: pointer;
+}
+
+.is-select .board-tab{
+  background: #fff;
+  color: #dd422a;
+  border-color: currentColor currentColor #fff currentColor;
+}
+
+.button-notice{
+  left: 0;
+}
+
+.button-archive{
+  left: 66px;
+}
+
+.board-list{
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.board-list li{
+  margin-top: 8px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.board-list li:first-child{
+  margin-top: 0;
+}
+
+.board-list a{
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* .board-list li:nth-child(n+2){
+  background-color: teal;
+} 선택자 지정, css는 0이 첫번째가 아니고 1일 첫번째 2번째 li부터 적용한다라는 뜻*/
+
+.board-more{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+
+.more::before{
+  color: hsla(110, 50%, 30%, 1);
+}
+
+
+/* .board {
+  position: relative;
+  padding-top: 45px;
+  margin-top: 20px;
+  background-color: yellow;
+}
+
+.board-panel {
+  background-color: pink;
+}
+
+.board-list .board-more {
+  display: none;
+}
+
+.is-select .board-list, .is-select .board-more {
+  display: block;
+}
+
+.board-tab {
+  position: absolute;
+  top: 0;
+  border: 1px solid #aaa;
+  padding: 6px 8px;
+  border-radius: 5px 5px 0 0;
+  background: #ccc linear-gradient(#ccc #eee);
+  color: #666;
+}
+
+.button-notice {
+  left: 0;
+}
+
+.button-archive {
+  left: 67px;
+}/
+
+.board-more {
+  position: absolute;
+  top: -8px;
+  right: -8px; -----클릭을 위해 패딩을 넣어 그 만큼 땅겨준거
+  padding: 8px;
+}
+
+.is-select .board-tab {
+  background: #fff;
+  color: #dd422a;
+  border-color: #dd422a #dd422a #fff #dd422a;
+  border-color: currentColor currentColor #fff currentColor; ->currentColor 폰트 컬러 변경 시 함께 변경 됨
+}
+
+.board-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #296897;
+}
+
+.board-more::before {
+  color: hsla(110, 50%, 30%, 1);
+} */
+
+
+/* 새소식 */
+
+.news{
+  margin-top: 20px;
+  position: relative;
+}
+
+.news::before{
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ccc linear-gradient(to right, #ccc, #fff);
+}
+
+.news-title{
+  font-size: 1.5rem;
+  margin: 0;
+  color: #dd422a
+}
+
+.news-link{
+  display: block;
+}
+
+.news-item{
+  margin-top: 35px;
+  padding-left: 130px;
+  position: relative;
+  min-height: 110px;
+}
+
+.news-item-title{
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.news-item-title::before{
+  content: "■ ";
+}
+
+.news-item-brief{
+  margin: 10px 0 0 0;
+  line-height: 1.5;
+}
+
+.news-item-thumbnail{
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.news-item-thumbnail img{
+  margin-bottom: 15px;
+  box-shadow: 0 15px 15px 0 #ccc;
+}
+
+.news-more{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+
+
+/* 내가 너무 어렵게 생각했음
+텍스트 부분이 딱 순서대로 되있어서 옆으로 밀고
+썸네일만 올리면 됫었음 */
+
+/* .news {
+  display: flow-root;
+  position: relative;
+  margin-top: 20px;
+  overflow: 0;
+}
+
+.news::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ccc linear-gradient(to right, #ccc 60%, #fff)
+}
+
+.news-title {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #dd422a;
+}
+
+.news-link {
+  display: block;
+}
+
+.news-item {
+  position: relative;
+  margin-top: 35px;
+  background-color: pink;
+}
+
+.news-item-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.news-item-date {
+  background-color: salmon;
+}
+
+.news-item-brief {
+  background-color: blueviolet;
+}
+
+.news-item-thumbnail {
+  margin: 0;
+}
+
+.news-more {
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  padding: 8px;
+}
+
+.news-item-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.news-item-thumbnail img {
+  box-shadow: 5px 5px 0 0 #000;
+}
+
+.news-item-thumbnail figcaption {
+  margin-top: 10px;
+}
+
+.news-item-title, .news-item-date, .news-item-brief {
+  float: right;
+  width: 250px;
+} */
+
 /* 슬로건 */
 .slogan {
   height: 10vh;
