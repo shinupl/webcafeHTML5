@@ -109,3 +109,6 @@ required -> 필수라는걸 알려줌
 <section> 에서 사양이 낮은 버전에서는 fieldset이 꼭 필요
        
           <fieldset> : display 가급적 값을 변경하는걸 추천하지 않는다
+
+
+그로우 0 슈링크 1
