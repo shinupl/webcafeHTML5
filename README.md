@@ -61,6 +61,7 @@ git log --oneline
   - float 요소의 부모에게 display: flow-root(상위 개채)를 지정해 float 개체의 높이를 부모가 읽어들일 수 있도록 할 수 있음  
   - overflow: hidden, clear: both는 flow-root를 대신해 float 이슈를 해결 할 수 있지만  
     영역이 넘어가면 잘려 보이기 때문에 수정에 용이하지 않음
+  - float는 width 값이 맞지 않으면 left, right를 적절하게 사용해도 정렬이 안되, width 값을 잘 계산해 진행
 
 - 세로값은 auto 또는 min-height
 - margin과 padding(내부 포함)은 적절하게 사용  

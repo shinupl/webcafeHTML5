@@ -315,7 +315,7 @@ body *, body *::before, body *::after {
   content: "";
   clear: both;
   display: block;
-  /* 클리어픽스의 마지막 요소를 블럭으로 만들어주기 */
+  /* 클리어픽스: display:flow-root;는 익스에서 안먹기 때문에 clearfix를 이용해 배경 이미지 유지 */
 }
 
 .group {
@@ -454,6 +454,64 @@ body *, body *::before, body *::after {
 .validation a:hover, .validation a:focus {
   color: red;
 }
+
+/* 웹관련 용어 */
+.term {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background: #ccc linear-gradient(#ccc, #eee);
+  padding: 10px 15px;
+  margin-top: 20px;
+}
+
+.term-title {
+  font-size: 1.5rem;
+  margin: 0;  
+}
+
+.term-list {
+  margin: 10px 0;
+}
+
+.term-list dd {
+  margin-left: 0;
+}
+
+.term-list-inner {
+  display: flow-root;
+  margin-top: 10px;
+}
+
+.term-list-subject {
+  float: right;
+  width: 140px;
+  color: #296897;
+  font-weight: 500;
+}
+
+.term-list-thumbnail {
+  float: left;
+}
+
+.term-list-thumbnail img {
+  vertical-align: top;
+  /* 이미지의 공백을 지우기 위해서(top, middle 등 사용/아에 공통으로 img vertical-align을 설정하고 진행하기도함) */
+}
+
+.term-list-brief {
+  float: right;
+  margin-top: 5px;
+  width: 140px;
+}
+
+.reverse .term-list-subject, .reverse .term-list-brief {
+  float: left;
+}
+
+.reverse .term-list-thumbnail {
+  float: right;
+}
+
 
 /* 슬로건 */
 .slogan {
