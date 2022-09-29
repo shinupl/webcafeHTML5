@@ -337,6 +337,124 @@ body *, body *::before, body *::after {
   clear: both;
 } */
 
+/* 로그인 */
+.login {
+  background: radial-gradient(circle at right top, #F7972A, #FC6914);
+  border-radius: 5px;
+  box-shadow: 5px 5px 0 0 #ccc;
+  padding: 10px;
+}
+
+.login-form fieldset {
+  position: relative;
+  padding: 0 0 4px 0;
+  border: 0;
+  margin: 0;
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid #aaa;
+}
+
+.login-form {
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 0 10px;
+}
+
+.login-title {
+  font-size: 1.5rem;
+  counter-reset: #ff0;
+  margin: 0 0 10px 10px;
+  color: #ff0;
+}
+
+.login-form input {
+  border: 1px solid #aaa;
+  width: 90px;
+  height: 22px;
+  padding: 1px 4px 1px 4px;
+}
+
+.login-form label {
+  display: inline-block;
+  width: 4em;
+}
+
+.login-form div {
+  margin-bottom: 6px;
+}
+
+.button-login {
+  background-color: #F7972A;
+  border: 1px solid #FC6914;
+  color: #fff;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 3px;
+}
+
+.sign {
+  background-color: #fff;
+  padding: 4px 10px;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign a {
+  font-size: 1.3rem;
+  padding: 6px 0;
+}
+
+.sign .icon-right-open::before{
+  color: #dd422a;
+}
+
+/* label {
+  padding-right: 10px;
+}
+
+.button-login {
+  float: right;
+  border: 1px solid #c15726;
+  background-color: #FC6914;
+  color: #fff;
+  border-radius: 6px;
+  width: 50px;
+  height: 50px;
+} */
+
+/* 유효성 검사 배너 */
+.validation {
+  margin-top: 25px; /* -->마진은 병합됨 */
+}
+
+.validation-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.validation-list li {
+  margin-top: 10px;  /* -->마진은 병합됨 위 25px에 병합 */
+}
+
+.validation-list a {
+  display: block;
+  background: url(./images/validation_icon.png) no-repeat 20px 50%, #ccc linear-gradient(to bottom, #ccc 0%, #ccc 30%, #fff 100%);
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  padding: 10px 10px 8px 45px;
+}
+
+.validation a:hover, .validation a:focus {
+  color: red;
+}
+
 /* 슬로건 */
 .slogan {
   height: 10vh;

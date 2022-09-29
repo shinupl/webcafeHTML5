@@ -48,6 +48,8 @@ git log --oneline
 ## 레이아웃 구성
 - 레이아웃을 위해 마크업을 변경하는건 안좋음
 - 마크업은 콘텐츠 기준, 뷰 기준이 아님
+- 구조를 보고 누구를 선택할 지 생각해 css를 넣어야됨
+
 - display : flex
   - flex-direction 속성으로 row 또는 column 방향을 지정할 수 있음  
     (flex-direction 메인축과 교차축이 결정)
@@ -94,3 +96,12 @@ focus-visible ---> 키보드 상태에서만
 페이지 이동이면 링크 / 이동이 없으면 버튼
 
 required -> 필수라는걸 알려줌
+
+## a태그 사용
+- 새창 열리게 할 시 target="" neneoopr, noreferrer를 꼭 넣어줘야함
+```css
+<a href="https://validator.w3.org/" target="_blank"  
+  title(마우스 오버했을 때 나오는 툴팁 속성)="마크업 유효성 검사 사이트로 이동(새창)"  
+  rel="noopener noreferrer"(보안을 위해)>W3C Markup Validation</a>
+```
+
