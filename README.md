@@ -147,3 +147,11 @@ required -> 필수라는걸 알려줌
 - IR : padding, text-indent(첫줄 들여쓰기, 첫줄 내여쓰기), position 글자를 밖으로 보내는거
 - aria-label 키보드 리딩이 되지만, 화면에 노출이 안되 편리  
   (overflow, padding등으로 밀 필요가 없다.)
+  
+  
+  
+  headingsmap
+  openwax
+  tota11y for chrome
+  visbug
+  web developer
