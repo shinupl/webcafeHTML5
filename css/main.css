@@ -41,6 +41,49 @@ body *, body *::before, body *::after {
   box-sizing: border-box;
 }
 
+/* 클래스 모듈 */
+.normal-style {
+  font-size: normal;
+}
+
+.reset-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+  /* 클리어픽스: display:flow-root;는 익스에서 안먹기 때문에 clearfix를 이용해 배경 이미지 유지 */
+}
+
+.gradient-effect {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background: linear-gradient(#ccc, #eee);
+  background-color: #ccc;
+}
+
+.spacing-sm {
+  padding: 10px;
+}
+
+.spacing-md {
+  padding: 15px;
+}
+
+.accent-color {
+  color: #dd422a;
+}
+
+.headline {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
 /* 건너뛰기 링크(키보드 사용시) */
 .skip-nav {
   background-color: #000;
@@ -309,13 +352,6 @@ body *, body *::before, body *::after {
   padding: 30px 15px;
   background-color: #fff;
   border-radius: 15px 15px 0 0;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: block;
-  /* 클리어픽스: display:flow-root;는 익스에서 안먹기 때문에 clearfix를 이용해 배경 이미지 유지 */
 }
 
 .group {
