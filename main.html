@@ -333,8 +333,10 @@
           <h2 class="event-title headline">신규 <span class="accent-color">이벤트</span></h2>
           
           <div class="event-button">
-            <button class="event-button-prev">이전 이벤트 보기</button>
-            <button class="event-button-next">다음 이벤트 보기</button>
+            <!-- <button class="event-button-prev">이전 이벤트 보기</button>
+            <button class="event-button-next">다음 이벤트 보기</button> -->
+            <button class="event-button-prev" aria-label="이전 이벤트 보기"></button>
+            <button class="event-button-next" aria-label="다음 이벤트 보기"></button>
           </div>
 
           <div id="eventDetail">
@@ -359,11 +361,40 @@
           </ul>
         </section>
       </div>
+
+      <div class="gradient-effect spacing-sm gap-top-md">
+        <section class="favorite">
+          <h2 class="favorite-title headline" id="favoriteTitle">인기 <span class="accent-color">사이트</span></h2>
+          <ol class="reset-list favorite-list">
+            <li class="no1">
+              <a href="/">W3C</a>
+              <em class="up" aria-label="순위 상승"></em>
+            </li>
+            <li class="no2"><a href="/">CSS ZenGarden</a><em class="down" aria-label="순위 하락"></em></li>
+            <li class="no3"><a href="/">MDN</a><em class="stop" aria-label="순위 변동없음"></em></li>
+            <li class="no4"><a href="/">Web Standards</a><em class="up" aria-label="순위 상승"></em></li>
+          </ol>
+          <a href="/" class="favorite-more more icon-plus" title="인기사이트" aria-labelledby="favoriteTitle">더보기</a>
+        </section>
+      </div>
+
     </div>
     <!-- <div class="clearfix"></div> -->
   </main>
 
-  <article class="slogan">슬로건</article>
+  <article class="slogan">
+    <h2 class="slogan-title headline" title="웹카페에서 웹표준을">슬로건</h2>
+    <p class="slogan-content">
+      <q cite="http://w3.org/WAI">
+      The power of the Web is in its universality, Access by everyone regardless
+      of disability is an essential aspect.</q>
+      Tim Berners - Lee , W3C Director and inventor of the World Wide Web
+    </p>
+    <footer class="a11y-hidden">
+      출처 : W3C, http://w3.org/WAI/
+    </footer>
+  </article>
+
   <footer class="footer">
     <div class="foonter-inner">푸터</div>
   </footer>

@@ -42,8 +42,8 @@ body *, body *::before, body *::after {
 }
 
 /* 클래스 모듈 */
-.normal-style {
-  font-size: normal;
+.normal-style{
+  font-style: normal;
 }
 
 .reset-list {
@@ -70,8 +70,8 @@ body *, body *::before, body *::after {
   padding: 10px;
 }
 
-.spacing-md {
-  padding: 15px;
+.gap-top-md {
+  margin-top: 20px;
 }
 
 .accent-color {
@@ -328,9 +328,7 @@ body *, body *::before, body *::after {
   position: relative;
   z-index: 10;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  animation-name: moveEffect;
-  animation-duration: 2000ms;
-  animation-fill-mode: forwards;
+  c
   display: inline-block; /* 독립적 이동이 필요하기 때문에 추가됨 */
 }
 
@@ -896,12 +894,320 @@ body *, body *::before, body *::after {
 .news-item-title, .news-item-date, .news-item-brief {
   float: right;
   width: 250px;
+} */ 
+
+/* 신규이벤트 */
+.event{
+  border-bottom: 1px solid #999;
+}
+
+.event-title{
+  float: left;
+}
+
+.event-button{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  /* gap: 5px; ex에서는 적용이 안됨*/
+}
+
+/* .event-button-prev, .event-button-next */
+.event-button button{
+  width: 19px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  background: url(./images/back_forward.png);
+}
+
+.event-button-prev{
+  margin-right: 5px;
+}
+
+.event-button-next{
+  background-position: -36px 0;
+}
+
+.event-thumbnail, .event-brief{
+  margin: 10px 0;
+}
+
+.event-thumbnail img{
+  box-shadow: 5px 5px 0 0 #999;
+}
+
+/* 관련사이트 */
+
+/* 내가 한거 / 타이틀이랑 버튼이 바로 있어 굳이 앱솔루트를 쓸 필요가 없어 float와 justify-content를 이용해 정렬
+.event {
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+.event-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.event-button-prev {
+  background: url(./images/back_forward.png) no-repeat 0;
+  width: 19px;
+  height: 18px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  margin-right: 5px;
+  color: transparent;
+  background-color: fuchsia;
+}
+
+.event-button-next {
+  background: url(./images/back_forward.png) no-repeat -36px 0;
+  width: 19px;
+  height: 18px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  color: transparent;
+  background-color: lightgreen;
 } */
 
-/* 슬로건 */
-.slogan {
-  height: 10vh;
+
+/* 관련 사이트 */
+.related{
+  padding-top: 10px;
 }
+
+.related-list{
+  margin-top: 10px;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  height: 27px;
+  overflow: hidden;
+  transition: height 250ms, padding 250ms 250ms;
+}
+
+ /* 애니매이션 오버나 포커스가 시작이 아닌 끝나는 시점 */
+.related-list:hover, .related-list:focus{
+  height: 147px;
+  padding: 10px 0;
+}
+
+.related-list li{
+  height: 25px;
+  padding: 4px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.related-list a{
+  /* display: block; */
+  flex: 0 0 100%; /* ---> width 100% 줘도 됨 */
+  padding: 0 15px;
+}
+/* 내가 한거
+@keyframes moveEffect2 {
+  0% {
+    height: 27px;
+    transform: translate(0,0);
+  }
+  100% {
+    height: 135px;
+    transform: translate(0,0);
+  }
+}
+
+.related {
+  padding-top: 10px;
+}
+
+.related-list {
+  margin-top: 10px;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  height: 27px;
+  overflow: hidden;
+}
+
+.related-list:hover { ------> 돌아갔을 때 문제가 생김, 오버는 끝나는 지점
+  animation-name: moveEffect2;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+}
+
+.related-list a {
+  display: block;
+  padding: 5px 5px 5px 10px;
+} */
+
+
+/* 인기 사이트 transform과 flex 사용을 안하고 제작하기 */
+.favorite{
+  position: relative;
+}
+
+.favorite-list{
+  margin-top: 10px;
+}
+
+.favorite-list li{
+  counter-increment: number;
+  margin-top: 8px;
+  position: relative;
+}
+
+.favorite-list li::before{
+  display: inline-block;
+  content: counter(number);
+  width: 16px;
+  background: #aaa;
+  text-align: center;
+  margin-right: 5px;
+  border-radius: 3px;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.up, .stop, .down{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 11px;
+  height: 9px;
+  margin-top: -5px; /* top 50으로 했을때 바로 센터가 아니기 때문에 마진으로 끌어올려준거 */
+  background: url(./images/rank.png) no-repeat;
+}
+
+.stop{
+  background-position: 0 50%;
+}
+
+.down{
+  background-position: 0 100%;
+}
+
+.favorite-more{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+
+
+/* .favorite {
+  position: relative;
+  background-color: lightcoral;
+}
+
+.favorite-title {
+  background-color: lightslategrey;
+}
+
+.favorite-list {
+  width: 100%;
+  margin-top: 10px;
+  background-color: lightgreen;
+}
+
+.favorite-list li {
+  margin-top: 4px;
+}
+
+.favorite-list li ::before {
+  width: 14px;
+  height: 14px;
+  background-color: #999;
+  color: #fff;
+}
+
+.favorite-more {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: lime;
+}
+
+.up {
+  width: 9px;
+  height: 11px;
+  background-position: 0 0;
+  background: url(./images/rank.png);
+} */
+
+
+/* 슬로건 */
+.slogan{
+  position: relative;
+  padding: 15px 80px 15px 180px;
+}
+
+.slogan-title{
+  width: 110px;
+  height: 83px;
+  position: absolute;
+  left: 35px;
+  bottom: -25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slogan-title::before{ /* ::before를  생성해 위에 하나 더 올리는걸로 */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* .slogan-title width, height를 그대로 유지한다는 것 */
+  height: 100%;
+  background: url(./images/coffee.png) no-repeat;
+}
+
+.slogan-content{
+  color: #a09784;
+  margin: 0;
+}
+
+.slogan-content q::before{
+  font-size: 3rem;
+  display: inline-block;
+  transform: translateY(10px);
+}
+
+.slogan-content q::after{
+  content: "";
+}
+
+
+/* .slogan {
+  position: relative;
+  background-color: yellow;
+}
+
+.slogan-title {
+  width: 110px;
+  height: 83px;
+  background: url(./images/coffee.png) no-repeat;
+  background-color: pink;
+}
+
+.slogan-content {
+  position: absolute;
+  left: 130px;
+  top: 0;
+}
+
+.slogan-content q::before {
+  content: "";
+  display: block;
+} */
 
 /* 푸터 */
 .footer {
